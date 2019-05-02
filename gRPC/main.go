@@ -8,7 +8,7 @@ import (
 	"net"
 )
 
-// generate proto file
+// generate proto file, with grpc plugin to request and answer
 //go:generate protoc -I ../gRPC/proto --go_out=plugins=grpc:../gRPC/proto ../gRPC/proto/greeting.proto
 
 // server is used to implement greeting.GreeterServer.

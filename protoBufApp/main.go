@@ -42,6 +42,7 @@ func main() {
 	}
 }
 
+// add text to file
 func add(text string) error {
 
 	task := &pblist.Task{
@@ -73,6 +74,7 @@ func add(text string) error {
 	return nil
 }
 
+// list write all words
 func list() error {
 	b, err := ioutil.ReadFile(dbPath)
 	if err != nil {

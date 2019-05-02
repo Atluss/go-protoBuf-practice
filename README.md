@@ -1,6 +1,7 @@
 ## How to use proto files
 
-About [gRPC](https://grpc.io/docs/). 
+About [gRPC](https://grpc.io/docs/) and [protoBuf protocol](https://github.com/protocolbuffers/protobuf). 
+
 After install protoc and install [plugin for go](https://github.com/golang/protobuf).
 Don't forget add **~/go/bin** to your PATH, just like this for example: in **~/.profile** in your home directory add this to end of file:
 ```bash
@@ -8,16 +9,16 @@ if [ -d "$HOME/go/bin" ] ; then
   PATH="$PATH:$HOME/go/bin"
 fi
 ``` 
-And find it: `echo $PATH`, restart: `source .profile`
+And find it: `$PATH`, restart: `source .profile`
 
 How to generate `*.proto` to `*.go` In folder where `*.proto` input it in terminal: `protoc --go_out=. file_name.proto`
 
-Project structure:
+## Project structure:
 
 dir | description
 ---|---
-gRPC | gRPC server for greetings requests and answers.
-protoBufApp | This directory show how to work with protoBuf protocol binary
+./gRPC | gRPC server for greetings requests and answers.
+./protoBufApp | This directory show how to work with protoBuf protocol binary
 
 ## Greeting
 
