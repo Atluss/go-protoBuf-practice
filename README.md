@@ -12,11 +12,27 @@ And find it: `echo $PATH`, restart: `source .profile`
 
 How to generate `*.proto` to `*.go` In folder where `*.proto` input it in terminal: `protoc --go_out=. file_name.proto`
 
+Project structure:
+
+dir | description
+---|---
+gRPC | gRPC server for greetings requests and answers.
+protoBufApp | This directory show how to work with protoBuf protocol binary
+
 ## Greeting
 
-Generate: `protoc --go_out=plugins=grpc:proto proto/greeting.proto`
+Generate(in dir) with grpc plugin: `protoc --go_out=plugins=grpc:proto proto/greeting.proto`
 
+## ProtoBufApp
 
-## ProtoBuf
-Install: `go install ./protoBufApp`
-And run it for the test: `protoBufApp list`
+* Generate proto file: `protoc --go_out=. proto/pblist.proto`  
+* Install or build: `go install ./protoBufApp`, `go build ./protoBufApp`
+* Run list: `protoBufApp list`
+* Add list: `protoBufApp add word` where word is a string to add
+
+#### How to read proto
+
+* `hexdump mydb.pb`
+* `hexdump -c mydb.pb`
+* `cat mydb.pb`
+* `cat mydb.pb | protoc --decode_raw`

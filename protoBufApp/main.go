@@ -1,11 +1,14 @@
 package main
 
+// generate proto file
+//go:generate protoc -I ../protoBufApp/proto --go_out=../protoBufApp/proto ../protoBufApp/proto/pblist.proto
+
 import (
 	"bytes"
 	"encoding/binary"
 	"flag"
 	"fmt"
-	pblist "github.com/Atluss/protoBufPractice/proto"
+	pblist "github.com/Atluss/protoBufPractice/protoBufApp/proto"
 	"github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"os"

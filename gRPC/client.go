@@ -1,8 +1,8 @@
-package gRPC
+package main
 
 import (
 	"context"
-	greeting "github.com/Atluss/protoBufPractice/proto/proto"
+	greeting "github.com/Atluss/protoBufPractice/gRPC/proto"
 	"google.golang.org/grpc"
 	"log"
 	"os"
