@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	greeting "github.com/Atluss/protoBufPractice/gRPC/proto"
+	"github.com/Atluss/protoBufPractice/pkg/v1/proto/greeting"
 	"google.golang.org/grpc"
 	"log"
 	"os"

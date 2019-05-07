@@ -2,14 +2,14 @@ package main
 
 import (
 	"context"
-	greeting "github.com/Atluss/protoBufPractice/gRPC/proto"
+	"github.com/Atluss/protoBufPractice/pkg/v1/proto/greeting"
 	"google.golang.org/grpc"
 	"log"
 	"net"
 )
 
 // generate proto file, with grpc plugin to request and answer
-//go:generate protoc -I ../gRPC/proto --go_out=plugins=grpc:../gRPC/proto ../gRPC/proto/greeting.proto
+//go:generate protoc -I ../../pkg/v1/proto/greeting --go_out=plugins=grpc:../../pkg/v1/proto/greeting ../../pkg/v1/proto/greeting/greeting.proto
 
 // server is used to implement greeting.GreeterServer.
 type server struct{}

@@ -1,14 +1,14 @@
 package main
 
 // generate proto file
-//go:generate protoc -I ../protoBufApp/proto --go_out=../protoBufApp/proto ../protoBufApp/proto/pblist.proto
+//go:generate protoc -I ../../pkg/v1/proto/pblist --go_out=../../pkg/v1/proto/pblist ../../pkg/v1/proto/pblist/pblist.proto
 
 import (
 	"bytes"
 	"encoding/binary"
 	"flag"
 	"fmt"
-	pblist "github.com/Atluss/protoBufPractice/protoBufApp/proto"
+	"github.com/Atluss/protoBufPractice/pkg/v1/proto/pblist"
 	"github.com/golang/protobuf/proto"
 	"io/ioutil"
 	"os"
@@ -35,10 +35,8 @@ func main() {
 	case "add":
 		err = add(strings.Join(flag.Args()[1:], ""))
 	default:
-		if err != nil {
-			fmt.Fprintln(os.Stderr, err)
-			os.Exit(1)
-		}
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
 	}
 }
 

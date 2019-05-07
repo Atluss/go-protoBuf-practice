@@ -1,3 +1,5 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/Atluss/protoBufPractice)](https://goreportcard.com/report/github.com/Atluss/protoBufPractice)
+
 ## How to use proto files
 
 About [gRPC](https://grpc.io/docs/) and [protoBuf protocol](https://github.com/protocolbuffers/protobuf). 
@@ -17,17 +19,17 @@ How to generate `*.proto` to `*.go` In folder where `*.proto` input it in termin
 
 dir | description
 ---|---
-./gRPC | gRPC server for greetings requests and answers.
-./protoBufApp | This directory show how to work with protoBuf protocol binary
+./cmd/gRPC | gRPC server for greetings requests and answers.
+./cmd/protoBufApp | This directory show how to work with protoBuf protocol binary
 
 ## Greeting
 
-Generate(in dir) with grpc plugin: `protoc --go_out=plugins=grpc:proto proto/greeting.proto`
+Generate(in dir) with grpc plugin: `protoc -I pkg/v1/proto/greeting --go_out=plugins=grpc:pkg/v1/proto/greeting pkg/v1/proto/greeting/greeting.proto`
 
 ## ProtoBufApp
 
-* Generate proto file: `protoc --go_out=. proto/pblist.proto`  
-* Install or build: `go install ./protoBufApp`, `go build ./protoBufApp`
+* Generate proto file: `protoc -I pkg/v1/proto/pblist --go_out=pkg/v1/proto/pblist pkg/v1/proto/pblist/pblist.proto`  
+* Install or build: `go install ./cmd/protoBufApp`, `go build ./cmd/protoBufApp`
 * Run list: `protoBufApp list`
 * Add list: `protoBufApp add word` where word is a string to add
 
