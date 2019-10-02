@@ -1,9 +1,9 @@
 module github.com/Atluss/protoBufPractice
 
-go 1.12.2
+go 1.31.1
 
 require (
-	github.com/golang/protobuf v1.2.0
-	golang.org/x/net v0.0.0-20190311183353-d8887717615a
-	google.golang.org/grpc v1.20.1
+	github.com/golang/protobuf v1.3.2
+	golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297
+	google.golang.org/grpc v1.23.0
 )

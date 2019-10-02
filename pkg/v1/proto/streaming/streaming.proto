@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+/*
+protoc --go_out=plugins=grpc:. streaming.proto
+*/
+
+package streaming;
+
+import "google/protobuf/timestamp.proto";
+
+service streaming {
+    rpc Stream(stream ClientMsg) returns (stream ServerMsg) {}
+}
+
+enum PONG_NUM{
+    EMPTY = 0;
+    PING = 1;
+    PONG = 2;
+}
+
+message ClientMsg {
+
+    google.protobuf.Timestamp timestamp = 1;
+
+    oneof event {
+        SendPingPong cln_send_ping_pong = 2;
+        ClnShutdown cln_shutdown = 3;
+    }
+
+    message ClnShutdown {}
+}
+
+message ServerMsg {
+    google.protobuf.Timestamp timestamp = 1;
+
+    oneof event {
+        SendPingPong srv_send_ping_pong = 2;
+        SrvShutdown srv_shutdown = 3;
+    }
+
+    message SrvShutdown {}
+}
+
+message SendPingPong {
+    string msg = 1;
+    PONG_NUM type = 2;
+}
